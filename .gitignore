@@ -30,6 +30,8 @@ yarn-error.log*
 /public/build
 /public/hot
 /public/storage
+/public/uploads/*
+!/public/uploads/.gitignore
 
 # ==============================
 # Storage
