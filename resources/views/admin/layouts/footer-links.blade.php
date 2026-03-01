@@ -1,3 +1,8 @@
+
+<!-- Core jQuery and Plugins -->
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('assets/js/additional-methods.min.js') }}"></script>
 <!-- JAVASCRIPT -->
 <script src="{{asset('assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{asset('assets/admin/libs/simplebar/simplebar.min.js') }}"></script>
