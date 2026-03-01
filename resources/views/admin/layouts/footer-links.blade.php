@@ -23,6 +23,7 @@
 
 <!-- Dashboard init -->
 <script src="{{asset('assets/admin/js/pages/dashboard-ecommerce.init.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- App js -->
 <script src="{{asset('assets/admin/js/app.js') }}"></script>

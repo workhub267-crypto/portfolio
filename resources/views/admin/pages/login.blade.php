@@ -71,7 +71,7 @@
 </div>
 
 @include('admin.layouts.footer-links')
-
+@include('admin.layouts.common-js')
 <script>
 $(document).ready(function () {
 
@@ -140,10 +140,11 @@ $(document).ready(function () {
 
                 success: function (response) {
 
-                    if (response.status) {
-                        window.location.href = route('admin.dashboard');
-                    }
 
+                    sendSuccess(response.message);
+                    setTimeout(function () {
+                        window.location.href = "{{ route('admin.dashboard') }}";
+                    }, 1000);
                 },
 
                 error: function (xhr) {
