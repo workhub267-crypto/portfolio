@@ -48,7 +48,7 @@
 
     @stack('modal')
     @include('admin.layouts.footer-links')
-{{--    @include('admin.layouts.common-js')--}}
+    @include('admin.layouts.common-js')
 
     @yield('script')
 

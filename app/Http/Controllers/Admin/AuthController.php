@@ -38,4 +38,9 @@ class AuthController extends Controller
     {
         return view('admin.pages.dashboard');
     }
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login');
+    }
 }
