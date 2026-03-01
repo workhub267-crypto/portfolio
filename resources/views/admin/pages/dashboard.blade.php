@@ -23,7 +23,7 @@
         @include('admin.layouts.header')
 
         <!-- Sidebar -->
-        @include('admin.layouts.siderbar')
+        @include('admin.layouts.sidebar')
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
@@ -48,7 +48,7 @@
 
     @stack('modal')
     @include('admin.layouts.footer-links')
-    @include('admin.layouts.common-js')
+{{--    @include('admin.layouts.common-js')--}}
 
     @yield('script')
 
