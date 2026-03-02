@@ -23,7 +23,7 @@
         @include('admin.layouts.header')
 
         <!-- Sidebar -->
-        @include('admin.layouts.siderbar')
+        @include('admin.layouts.sidebar')
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
