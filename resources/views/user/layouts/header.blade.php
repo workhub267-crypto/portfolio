@@ -4,6 +4,7 @@
         <a class="site-logo" href="{{ url('/') }}">
             <img src="{{asset('assets/user/images/logo.svg')}}" alt="Homepage">
         </a>
+</a>
     </div>
 
     <nav class="header-nav-wrap">

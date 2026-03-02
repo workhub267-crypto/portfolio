@@ -223,74 +223,7 @@
             </div>
         </div> <!-- end heading-block -->
 
-        <div class="row services-list block-large-1-3 block-medium-1-2 block-tab-full">
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Brand Identity</h4>
-                    <p>
-                        Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
-                        a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
-                        asperiores est commodi amet quia architecto. Dolores necessitatibus et.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Illustration</h4>
-                    <p>
-                        Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
-                        a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
-                        asperiores est commodi amet quia architecto. Dolores necessitatibus et.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Web Design</h4>
-                    <p>
-                        Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
-                        a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
-                        asperiores est commodi amet quia architecto. Dolores necessitatibus et.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Product Strategy</h4>
-                    <p>
-                        Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
-                        a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
-                        asperiores est commodi amet quia architecto. Dolores necessitatibus et.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">UI/UX Design</h4>
-                    <p>
-                        Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
-                        a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
-                        asperiores est commodi amet quia architecto. Dolores necessitatibus et.
-                    </p>
-                </div>
-            </div>
-
-            <div class="column item-service" data-aos="fade-up">
-                <div class="item-service__content">
-                    <h4 class="item-title">Mobile Design</h4>
-                    <p>
-                        Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
-                        a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
-                        asperiores est commodi amet quia architecto. Dolores necessitatibus et.
-                    </p>
-                </div>
-            </div>
-
+        <div class="row services-list block-large-1-3 block-medium-1-2 block-tab-full"  id="services-container">
         </div> <!-- end services-list -->
 
     </section> <!-- end s-services -->
@@ -370,133 +303,6 @@
                     </div>
                 </div> <!-- end masonry__brick -->
 
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="{{ asset('assets/user/images/portfolio/gallery/g-woodcraft.jpg') }}"
-                                class="thumb-link" title="Woodcraft" data-size="1050x700">
-                                <img src="{{ asset('assets/user/images/portfolio/woodcraft.jpg') }}"
-                                    srcset="{{ asset('assets/user/images/portfolio/woodcraft.jpg') }} 1x, {{ asset('assets/user/images/portfolio/woodcraft@2x.jpg') }} 2x"
-                                    alt="">
-                            </a>
-                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Woodcraft
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Design
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="{{ asset('assets/user/images/portfolio/gallery/g-beetle.jpg') }}"
-                                class="thumb-link" title="The Beetle Car" data-size="1050x700">
-                                <img src="{{ asset('assets/user/images/portfolio/the-beetle.jpg') }}"
-                                    srcset="{{ asset('assets/user/images/portfolio/the-beetle.jpg') }} 1x, {{ asset('assets/user/images/portfolio/the-beetle@2x.jpg') }} 2x"
-                                    alt="">
-                            </a>
-                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                The Beetle
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Development
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="{{ asset('assets/user/images/portfolio/gallery/g-shutterbug.jpg') }}"
-                                class="thumb-link" title="Grow Green" data-size="1050x700">
-                                <img src="{{ asset('assets/user/images/portfolio/shutterbug.jpg') }}"
-                                    srcset="{{ asset('assets/user/images/portfolio/shutterbug.jpg') }} 1x, {{ asset('assets/user/images/portfolio/shutterbug@2x.jpg') }} 2x"
-                                    alt="">
-                            </a>
-                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Shutterbug
-                            </h4>
-                            <p class="item-folio__cat">
-                                Branding
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="{{ asset('assets/user/images/portfolio/gallery/g-lamp.jpg') }}" class="thumb-link"
-                                title="Guitarist" data-size="1050x700">
-                                <img src="{{ asset('assets/user/images/portfolio/lamp.jpg') }}"
-                                    srcset="{{ asset('assets/user/images/portfolio/lamp.jpg') }} 1x, {{ asset('assets/user/images/portfolio/lamp@2x.jpg') }} 2x"
-                                    alt="">
-                            </a>
-                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Lamp
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Design
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="{{ asset('assets/user/images/portfolio/gallery/g-fuji.jpg') }}" class="thumb-link"
-                                title="Palmeira" data-size="1050x700">
-                                <img src="{{ asset('assets/user/images/portfolio/fuji.jpg') }}"
-                                    srcset="{{ asset('assets/user/images/portfolio/fuji.jpg') }} 1x, {{ asset('assets/user/images/portfolio/fuji@2x.jpg') }} 2x"
-                                    alt="">
-                            </a>
-                        <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Fuji
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Design
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
 
             </div> <!-- end masonry -->
 
@@ -511,50 +317,7 @@
 
         <div class="row testimonials" data-aos="fade-up">
 
-            <div class="column large-full testimonials__slider">
-
-                <div class="testimonials__slide">
-                    <p>Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem.
-                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
-                        Laudantium quia consequatur molestias delectus culpa.</p>
-                    <div class="testimonials__info">
-                        <img src="{{ asset('assets/user/images/avatars/user-02.jpg') }}" alt="Author image"
-                            class="testimonials__avatar">
-                        <cite class="testimonials__cite">
-                            <strong>Tim Cook</strong>
-                            <span>CEO, Apple</span>
-                        </cite>
-                    </div>
-                </div> <!-- end testimonials__slide -->
-
-                <div class="testimonials__slide">
-                <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                        Quasi voluptas eius distinctio. Atque eos maxime.</p>
-                    <div class="testimonials__info">
-                        <img src="{{ asset('assets/user/images/avatars/user-01.jpg') }}" alt="Author image"
-                            class="testimonials__avatar">
-                        <cite class="testimonials__cite">
-                            <strong>Sundar Pichai</strong>
-                            <span>CEO, Google</span>
-                        </cite>
-                    </div>
-                </div> <!-- end testimonials__slide -->
-
-                <div class="testimonials__slide">
-                <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                    Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                        Voluptatem dignissimos ut.</p>
-                    <div class="testimonials__info">
-                        <img src="{{ asset('assets/user/images/avatars/user-04.jpg') }}" alt="Author image"
-                            class="testimonials__avatar">
-                        <cite class="testimonials__cite">
-                            <strong>Satya Nadella</strong>
-                            <span>CEO, Microsoft</span>
-                        </cite>
-                    </div>
-                </div> <!-- end testimonials__slide -->
-
+            <div class="column large-full testimonials__slider" id="testimonial-container">
             </div> <!-- end testimonials__slider -->
 
         </div> <!-- end testimonials -->
@@ -723,6 +486,71 @@
                         alert('PDF not found');
                     }
                 });
+            });
+
+            $.ajax({
+                url: "{{ route('testimonials.data') }}",
+                method: "GET",
+                success: function (response) {
+
+                    if (response.status && response.data.length > 0) {
+                        let html = "";
+
+                        response.data.forEach(function (testimonial) {
+                            html += `
+                             <div class="testimonials__slide">
+                                <p>${testimonial.message}</p>
+                                <div class="testimonials__info">
+                                    <img src="/storage/testimonials/${testimonial.client_image}" 
+                                    class="testimonials__avatar">
+                                <cite class="testimonials__cite">
+                                <strong>${testimonial.client_name}</strong>
+                                <span>${testimonial.designation ?? ''}</span>
+                                </cite>
+                            </div>
+                        </div>
+                        `;
+                        });
+
+                        $('#testimonial-container').html(html);
+
+                        if ($('.testimonials__slider').hasClass('slick-initialized')) {
+                            $('.testimonials__slider').slick('unslick');
+                        }
+
+                        $('.testimonials__slider').slick({
+                            dots: true,
+                            arrows: false,
+                            autoplay: true,
+                            autoplaySpeed: 3000
+                        });
+                    }
+                }
+            });
+
+            $.ajax({
+                url: "{{ route('services.data') }}",
+                method: "GET",
+                success: function (response) {
+
+                    if (response.status && response.data.length > 0) {
+                        let html = "";
+
+                        response.data.forEach(function (services) {
+                            html += `
+                                <div class="column item-service" data-aos="fade-up">
+                                    <div class="item-service__content">
+                                    <h4 class="item-title">${services.title}</h4>
+                                    <p>
+                                        ${services.description}
+                                    </p>
+                                    </div>
+                                </div>
+                            ` });
+
+                        $('#services-container').html(html);
+                    }
+                }
             });
         });
     </script>

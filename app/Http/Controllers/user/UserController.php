@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Http\Traits\ResponseTrait;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Testimonial;
+use App\Models\Service;
 
 class UserController extends Controller
 {
@@ -59,4 +61,22 @@ class UserController extends Controller
             200
         );
     }
+
+    public function getTestimonials()
+    {
+        $testimonials = Testimonial::all();
+        if(!$testimonials){
+            return $this->sendError("Testimonials not found",404);
+        }
+        return $this->sendResponse('Testimonials Fetched Successfully', $testimonials, 200);
+    }
+     public function getServices()
+    {
+        $services = Service::all();
+        if(!$services){
+            return $this->sendError("Testimonials not found",404);
+        }
+        return $this->sendResponse('Testimonials Fetched Successfully', $services, 200);
+    }
+
 }

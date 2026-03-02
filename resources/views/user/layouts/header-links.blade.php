@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('assets/user/css/base.css')}}">
 <link rel="stylesheet" href="{{asset('assets/user/css/vendor.css')}}">
 <link rel="stylesheet" href="{{asset('assets/user/css/main.css')}}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css" integrity="sha512-VSD3lcSci0foeRFRHWdYX4FaLvec89irh5+QAGc00j5AOdow2r5MFPhoPEYBUQdyarXwbzyJEO7Iko7+PnPuBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="{{asset('assets/user/css/toastify.css') }}">
 
 <!-- script
 ================================================== -->

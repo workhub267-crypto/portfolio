@@ -17,3 +17,6 @@ Route::get('download-resume', [UserController::class, 'downloadResume'])->name('
 Route::get('contact', [UserController::class,'contactPage'])->name('user.contact');
 
 Route::post('contact', [UserController::class,'sendContactData'])->name('user.contact');
+
+Route::get('/testimonials-data', [UserController::class, 'getTestimonials'])->name('testimonials.data');
+Route::get('/services', [UserController::class, 'getServices'])->name('services.data');
