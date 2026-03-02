@@ -1,18 +1,24 @@
 <header class="s-header">
 
     <div class="header-logo">
-        <a class="site-logo" href="index.html">
+        <a class="site-logo" href="{{ url('/') }}">
             <img src="{{asset('assets/user/images/logo.svg')}}" alt="Homepage">
         </a>
     </div>
 
     <nav class="header-nav-wrap">
         <ul class="header-main-nav">
-            <li class="current"><a class="smoothscroll" href="#intro" title="intro">Intro</a></li>
-            <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-            <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
-            <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
-            <li><a class="smoothscroll" href="#contact" title="contact us">Say Hello</a></li>
+            <li class="{{ request()->is('/') ? 'current' : '' }}"><a
+                    class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#intro"
+                    title="intro">Intro</a></li>
+            <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#about"
+                    title="about">About</a></li>
+            <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#services"
+                    title="services">Services</a></li>
+            <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#works"
+                    title="works">Works</a></li>
+            <li class="{{ request()->is('contact') ? 'current' : '' }}"><a href="{{ route('user.contact') }}"
+                    title="contact us">Contact</a></li>
         </ul>
 
         <ul class="header-social">

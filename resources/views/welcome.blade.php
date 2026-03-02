@@ -39,11 +39,9 @@
         <div class="row intro-content">
 
             <div class="column large-9 mob-full intro-text">
-                <h3>Hello, I'm John Doe</h3>
-                <h1>
-                    Digital Designer <br>
-                    and Web Developer <br>
-                    Based In Somewhere.
+                <h3 id="about-title"></h3>
+                <h1 id="about-subtitle">
+
                 </h1>
             </div>
 
@@ -54,7 +52,7 @@
             </div>
 
             <div class="intro-grid"></div>
-            <div class="intro-pic"></div>
+            <div class="intro-pic" id="about-image"></div>
 
         </div> <!-- end row -->
 
@@ -75,47 +73,27 @@
 
             <div class="row about-me__content" data-aos="fade-up">
                 <div class="column large-full about-me__text">
-                    <p class="lead">
-                        Nulla aspernatur nam et accusantium. Tempore delectus dignissimos aut
-                        ab commodi. Labore et cupiditate temporibus odio debitis eaque.
-                        Officia provident aut iste et dicta perferendis. Velit iure adipisci.
-                        Molestiae qui fuga rerum facilis.
-                    </p>
 
-                    <p>
-                        Reprehenderit quia id facilis nihil odit perferendis fugiat quidem voluptas.
-                        Non ratione tenetur. Quis earum quia deleniti fugit fugiat minus omnis.
-                        Iure dolore dolorum. Aspernatur quos cumque ea dolorum nemo nihil
-                    beatae magnam. Qui molestiae rem. Maxime enim provident ipsum reprehenderit tenetur. Et cupiditate
-                        repellendus. Et modi ipsum aut harum. Ratione alias.
-                    </p>
+                    <!-- First paragraph -->
+                    <p class="lead" id="about-lead"></p>
 
-                    <p>
-                        Rerum consequatur dolore quae.
-                        Qui excepturi facilis quam quae quasi. Mollitia occaecati minus voluptas veniam.
-                    Qui excepturi facilis quam quae quasi. Mollitia occaecati minus voluptas veniam. Est est occaecati dolor
-                        qui aut et eum. Aspernatur quos cumque ea dolorum nemo nihil
-                        beatae magnam. Qui molestiae rem.
-                    </p>
+                    <!-- Two column layout -->
+                    <div class="row">
+                        <div class="column large-6 tab-full" id="about-left"></div>
+                        <div class="column large-6 tab-full" id="about-right"></div>
+                    </div>
 
-                    <p>
-                        Maxime enim provident ipsum reprehenderit tenetur. Et cupiditate
-                        repellendus. Et modi ipsum aut harum. Ratione alias sed. Rerum
-                        consequatur dolore quae. Qui excepturi facilis quam quae quasi.
-                        Mollitia occaecati minus voluptas veniam. Est est occaecati dolor
-                        qui aut et eum. Aspernatur quos cumque ea dolorum nemo nihil
-                        beatae magnam. Qui molestiae rem. Aspernatur quos cumque ea dolorum
-                        nemo nihil. Qui molestiae rem.
-                    </p>
                 </div>
             </div>
 
             <div class="row about-me__buttons">
                 <div class="column large-half tab-full" data-aos="fade-up">
-                    <a href="#0" class="btn btn--stroke full-width">Hire Me</a>
+                    <a href="{{route('user.contact')}}" class="btn btn--stroke full-width">Hire Me</a>
                 </div>
                 <div class="column large-half tab-full" data-aos="fade-up">
-                    <a href="#0" class="btn btn--primary full-width">Download CV</a>
+                    <a href="javascript:void(0);" id="downloadResumeBtn" class="btn btn--primary full-width">
+                        Download CV
+                    </a>
                 </div>
             </div>
 
@@ -673,5 +651,80 @@
     </div><!-- end photoSwipe background -->
 
     @include('user.layouts.footer-links')
+    <script>
+        $(document).ready(function () {
 
+            $.ajax({
+                url: "/about-data",
+                type: "GET",
+                success: function (response) {
+
+                    if (response.status && response.data.description) {
+
+                        let description = response.data.description;
+
+                        // split complete description into two line breaks
+                        let paragraphs = description.split("\n\n");
+
+                        $("#about-lead").text(paragraphs[0]);
+                        // Remove first paragraph
+                        paragraphs.shift();
+
+                        console.log(paragraphs);
+                        let half = Math.ceil(paragraphs.length / 2);
+
+                        let leftSide = paragraphs.slice(0, half);
+                        let rightSide = paragraphs.slice(half);
+                        let leftHtml = "";
+                        let rightHtml = "";
+
+                        leftSide.forEach(function (para) {
+                            leftHtml += `<p>${para}</p>`;
+                        });
+
+                        rightSide.forEach(function (para) {
+                            rightHtml += `<p>${para}</p>`;
+                        });
+                        $('#about-title').html(response.data.title);
+                        $('#about-subtitle').html(response.data.subtitle);
+                        $("#about-left").html(leftHtml);
+                        $("#about-right").html(rightHtml);
+                    }
+
+                }
+            });
+
+            $('#downloadResumeBtn').click(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "/download-resume",
+                    type: "GET",
+                    xhrFields: {
+                        responseType: 'blob'  
+                    },   
+
+                    success: function (data, status, xhr) {
+
+                        // Create blob
+                        let blob = new Blob([data], { type: 'application/pdf' });
+
+                        // Create temporary link
+                        let link = document.createElement('a');
+                        link.href = window.URL.createObjectURL(blob);
+                        link.download = "resume.pdf";
+
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    },
+
+                    error: function () {
+                        alert('PDF not found');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+</html>
