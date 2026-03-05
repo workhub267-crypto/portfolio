@@ -39,7 +39,7 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics"> Analytics
+                                <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics"> About
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -63,7 +63,11 @@
                         </ul>
                     </div>
                 </li> <!-- end Dashboard Menu -->
-
+<li class="nav-item">
+                    <a href="{{ route('admin.about') }}" class="nav-link menu-link">
+                        <i class="bx bx-user-circle"></i> <span data-key="t-user">About</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
