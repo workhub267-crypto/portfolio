@@ -6,6 +6,8 @@
 <!-- Swiper slider css -->
 <link href="{{asset('assets/admin/libs/swiper/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
 
+<link rel="stylesheet" href="{{asset('assets/libs/filepond/filepond.min.css')}}" type="text/css" />
+<link rel="stylesheet" href="{{asset('assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css')}}">
 <!-- Layout config Js -->
 <script src="{{asset('assets/admin/js/layout.js') }}"></script>
 
