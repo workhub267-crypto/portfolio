@@ -55,38 +55,55 @@
 
                             <div class="col-lg-6">
                                 <div class="mb-3">
-
-                                    <label class="form-label">Profile Image</label>
-
-                                    <input type="file" name="profile_image" class="form-control profile_image_input">
-
-                                    <div class="mt-2">
-
-                                        <img src=""
-                                            class="img-thumbnail profile-image" style="height:60px;">
-                                    </div>
-                                    <span id="profile_image-error" class="text-danger"></span>
-
+                                <label class="form-label">Profile Image</label>
+                                <input type="file" name="profile_image" class="form-control profile_image_input">
+                                <div class="mt-2">
+                                <img src="{{ $about->profile_image ? asset('storage/'.$about->profile_image) : '' }}"
+                                    class="img-thumbnail profile-image"
+                                style="height:100px;width:100px;object-fit:cover;border-radius:50%;">
                                 </div>
+                                <span id="profile_image-error" class="text-danger"></span>
                             </div>
+                        </div>
 
                             <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Upload CV</label>
-                                    <input type="file" name="upload_cv" class="form-control upload_cv">
-                                    <div class="mt-2"></div>
-                                </div>
+    <div class="mb-3">
 
-                                <span id="upload_cv-error" class="text-danger"></span>
+        <label class="form-label">Upload CV</label>
 
-                            </div>
+        <input type="file"
+               name="upload_cv"
+               class="filepond"
+               id="upload_cv"
+               accept=".pdf,.doc,.docx">
+
+        @if($about->resume_file)
+
+        <div class="mt-2">
+
+            <a href="{{ asset('storage/'.$about->resume_file) }}"
+               class="btn btn-sm btn-success"
+               download>
+
+               Download Current CV
+
+            </a>
+
+        </div>
+
+        @endif
+
+        <span id="upload_cv-error" class="text-danger"></span>
+
+    </div>
+</div>
 
                         </div>
 
                 </div>
 
 
-                <div class="text-end">
+                <div class="text-center mb-3">
                     <button type="submit" class="btn btn-primary">
                         Save Settings
                     </button>
@@ -105,6 +122,22 @@
     
 $(document).ready(function () {
 
+    const inputElement = document.querySelector('#upload_cv');
+
+if (inputElement) {
+    FilePond.create(inputElement, {
+        allowMultiple: false,
+        storeAsFile: true,   // ⭐ important
+
+        acceptedFileTypes: [
+            'application/pdf',
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ],
+
+        labelIdle: 'Drag & Drop your CV or <span class="filepond--label-action">Browse</span>'
+    });
+}
     $("#frmabout").validate({
 
         ignore: [],
@@ -196,18 +229,18 @@ $(document).ready(function () {
 
                     let res = xhr.responseJSON;
 
-                    if (res.errors) {
+    $('.text-danger').html('');
+    if (res.error) {
 
-                        $.each(res.errors, function (key, value) {
+        $.each(res.error, function (key, value) {
 
-                            $("#" + key + "-error").html(value[0]);
+            $("#" + key + "-error").html(value[0]);
 
-                        });
+        });
 
-                    }
+    }
 
-                }
-
+}
             });
 
         }

@@ -16,22 +16,52 @@ use ResponseTrait;
 public function about(){
     $about=About::first();
     return view('admin.pages.about',compact('about'));
-
 }
 public function update(Request $request)
 {
 
-    $validator = Validator::make($request->all(), [
-'id'=>'required',
+    $validator = Validator::make(
+    $request->all(),
+    [
+        'id' => 'required',
         'title' => 'required|string|max:255',
         'subtitle' => 'required|string|max:255',
         'description' => 'required|string',
-'experience'=>'required',
+        'experience' => 'required',
         'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+        'upload_cv' => 'nullable|mimes:pdf,doc,docx',
+    ],
+    [
 
-        'upload_cv' => 'nullable|mimes:pdf,doc,docx|max:2048',
+        // ID
+        'id.required' => 'About record ID is required.',
 
-    ]);
+        // Title
+        'title.required' => 'Title is required.',
+        'title.string' => 'Title must be a valid string.',
+        'title.max' => 'Title must not exceed 255 characters.',
+
+        // Subtitle
+        'subtitle.required' => 'Subtitle is required.',
+        'subtitle.string' => 'Subtitle must be a valid string.',
+        'subtitle.max' => 'Subtitle must not exceed 255 characters.',
+
+        // Description
+        'description.required' => 'Description is required.',
+        'description.string' => 'Description must be a valid text.',
+
+        // Experience
+        'experience.required' => 'Experience field is required.',
+
+        // Profile Image
+'profile_image.max' => 'Profile image size must not exceed 2MB.',
+'profile_image.uploaded' => 'Profile image failed to upload.',
+
+        // CV Upload
+        'upload_cv.mimes' => 'CV must be a PDF, DOC, or DOCX file.',
+        'upload_cv.max' => 'CV file size must not exceed 2MB.',
+    ]
+);
 
     if ($validator->fails()) {
         return $this->sendValidationError($validator->errors());

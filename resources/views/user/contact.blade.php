@@ -17,104 +17,153 @@
     @include('user.layouts.header-links')
 
     <style>
-        .subheading,
+        .subheading {
+            color: #ffffff !important;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
         .subheading-text {
             color: #ffffff !important;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
 
         .s-contact-page {
-            padding-top: 10rem;
-            padding-bottom: 10rem;
-            background-color: #0c0c0c;
+            padding-top: 15rem;
+            padding-bottom: 12rem;
+            background: radial-gradient(circle at 100% 100%, #1a1a1a 0%, #050505 100%);
             color: rgba(255, 255, 255, 0.5);
             position: relative;
+            overflow: hidden;
         }
 
         .contact-form-wrap {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 5rem;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6rem;
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
         }
 
         .contact-form-wrap h2 {
             color: #ffffff;
+            font-family: "Frank Ruhl Libre", serif;
+            font-size: 4rem;
             margin-top: 0;
             margin-bottom: 4rem;
+            letter-spacing: -0.02em;
         }
 
         .contact-form input,
         .contact-form textarea {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             color: #ffffff;
             width: 100%;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            padding: 2rem 2.5rem;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: 1.6rem;
+            font-family: "Roboto", sans-serif;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.06);
             border-color: #cf1767;
-            /* Using theme highlight color */
+            box-shadow: 0 0 20px rgba(207, 23, 103, 0.2);
             outline: none;
+            transform: translateY(-2px);
         }
 
         .contact-form .btn--primary {
-            background-color: #cf1767;
-            border-color: #cf1767;
+            background: linear-gradient(135deg, #cf1767 0%, #ff3b8e 100%);
+            border: none;
             color: #ffffff;
-            letter-spacing: .2rem;
+            letter-spacing: .3rem;
             text-transform: uppercase;
+            font-weight: 700;
             width: 100%;
-            height: 6rem;
-            line-height: 6rem;
+            height: 7rem;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(207, 23, 103, 0.3);
         }
 
         .contact-form .btn--primary:hover {
-            background-color: #b01458;
-            border-color: #b01458;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(207, 23, 103, 0.5);
         }
 
         .contact-info-list {
             list-style: none;
             margin-left: 0;
             padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .contact-info-list li {
-            margin-bottom: 3rem;
-            padding-left: 0;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 3.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info-list li:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(207, 23, 103, 0.3);
+            transform: translateX(10px);
         }
 
         .contact-info-list h5 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
+            color: #cf1767;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            font-size: 1.4rem;
+            letter-spacing: 0.3rem;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
         .contact-info-list p,
         .contact-info-list a {
             font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
         }
 
-        /* Adjusting header for separate page */
+        .contact-info-list a:hover {
+            color: #cf1767;
+        }
+
         .s-header {
-            background-color: #000000;
+            background-color: rgba(5, 5, 5, 0.9) !important;
+            backdrop-filter: blur(20px);
         }
 
-        /* Responsive adjustments */
         @media screen and (max-width: 800px) {
             .contact-form-wrap {
-                padding: 3rem;
+                padding: 4rem 3rem;
+            }
+
+            .s-contact-page {
+                padding-top: 12rem;
+            }
+
+            .contact-info-list li:hover {
+                transform: none;
             }
         }
     </style>
@@ -207,14 +256,14 @@
     @include('admin.layouts.common-js')
     {{-- success: function (response) {
 
-                    if (response.status) {
+    if (response.status) {
 
-                        $('#contactForm')[0].reset();
+    $('#contactForm')[0].reset();
 
-                        Toastify({
-                            text: `
-                            <div style="display:flex; align-items:center; gap:12px;">
-                                <div style="
+    Toastify({
+    text: `
+    <div style="display:flex; align-items:center; gap:12px;">
+        <div style="
                                     width:35px;
                                     height:35px;
                                     border-radius:50%;
@@ -225,33 +274,33 @@
                                     font-weight:bold;
                                     color:white;
                                 ">
-                                    ✓
-                                </div>
-                                <div>
-                                    <div style="font-weight:600; font-size:14px;">
-                                      ${response.message}
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            `,
-                            duration: 2000,
-                            gravity: "top",
-                            position: "right",
-                            close: false,
-                            escapeMarkup: false,
-                            stopOnFocus: true,
-                            style: {
-                                background: "rgba(20,20,20,0.95)",
-                                border: "1px solid #cf1767",
-                                borderRadius: "10px",
-                                boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
-                                padding: "16px",
-                                minWidth: "320px"
-                            }
-                        }).showToast();
-                    }
-                } --}}
+            ✓
+        </div>
+        <div>
+            <div style="font-weight:600; font-size:14px;">
+                ${response.message}
+            </div>
+
+        </div>
+    </div>
+    `,
+    duration: 2000,
+    gravity: "top",
+    position: "right",
+    close: false,
+    escapeMarkup: false,
+    stopOnFocus: true,
+    style: {
+    background: "rgba(20,20,20,0.95)",
+    border: "1px solid #cf1767",
+    borderRadius: "10px",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
+    padding: "16px",
+    minWidth: "320px"
+    }
+    }).showToast();
+    }
+    } --}}
 </body>
 <script>
     $(document).ready(function () {
@@ -265,12 +314,12 @@
                 contentType: false,
                 processData: false,
                 success: function (response) {
-                    if(response.status){
+                    if (response.status) {
                         $('#contactForm')[0].reset();
                         sendToast(response.message, 'success', 'top', 'right', 2000);
                     }
                 }
-                
+
             });
         })
     })

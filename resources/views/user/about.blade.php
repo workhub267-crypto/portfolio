@@ -20,9 +20,10 @@
         .s-about-page {
             padding-top: 20rem;
             padding-bottom: 12rem;
-            background: linear-gradient(to bottom, #050505 0%, #0c0c0c 100%);
+            background: radial-gradient(circle at 0% 0%, #1a1a1a 0%, #050505 100%);
             color: rgba(255, 255, 255, 0.6);
             position: relative;
+            overflow: hidden;
         }
 
         .about-hero {
@@ -38,14 +39,15 @@
             margin-top: 0;
             margin-bottom: 2.4rem;
             letter-spacing: -0.02em;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .about-hero .subheading {
             font-family: "Roboto", sans-serif;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: .4rem;
+            letter-spacing: .5rem;
             color: #cf1767;
             margin-bottom: 2rem;
             display: block;
@@ -54,60 +56,65 @@
         .about-content-wrap {
             font-size: 1.8rem;
             line-height: 2;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .about-content-wrap p.lead {
             font-family: "Lora", serif;
-            font-size: clamp(2.2rem, 3vw, 3.2rem);
+            font-size: clamp(2.2rem, 3vw, 3rem);
             line-height: 1.6;
             color: #ffffff;
-            margin-bottom: 6rem;
+            margin-bottom: 8rem;
             text-align: center;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.9;
         }
 
         .timeline-section {
-            background-color: #0c0c0c;
-            padding-top: 12rem;
-            padding-bottom: 12rem;
+            background-color: #050505;
+            padding-top: 15rem;
+            padding-bottom: 15rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .section-header-inner {
-            margin-bottom: 8rem;
+            margin-bottom: 10rem;
         }
 
         .section-header-inner h2 {
             font-family: "Frank Ruhl Libre", serif;
             color: #ffffff;
-            font-size: 4.8rem;
+            font-size: 5.4rem;
             margin-bottom: 0;
             position: relative;
-            padding-bottom: 2.4rem;
+            padding-bottom: 3rem;
+            letter-spacing: -0.01em;
         }
 
         .section-header-inner h2::after {
             content: "";
             display: block;
-            height: 3px;
-            width: 80px;
-            background-color: #cf1767;
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, #cf1767, transparent);
             position: absolute;
             bottom: 0;
             left: 0;
         }
 
         /* Timeline Overrides for Dark mode */
-        .timeline::before,
-        .timeline::after {
-            background-color: rgba(255, 255, 255, 0.1) !important;
+        .timeline::before {
+            background-color: rgba(207, 23, 103, 0.2) !important;
+            width: 2px !important;
         }
 
         .timeline__icon-wrap {
-            border-color: rgba(255, 255, 255, 0.15) !important;
-            background-color: #050505;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            background-color: #0c0c0c !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .timeline__icon {
@@ -116,52 +123,76 @@
 
         .timeline__bullet {
             background-color: #cf1767 !important;
+            box-shadow: 0 0 15px rgba(207, 23, 103, 0.6);
         }
 
         .timeline__block {
-            min-height: auto !important;
-            margin-bottom: 6rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4rem !important;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 4rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .timeline__block:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(207, 23, 103, 0.3);
+            transform: translateX(10px);
         }
 
         .timeline__header h3.item-title {
             color: #ffffff !important;
             font-size: 2.8rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            font-family: "Frank Ruhl Libre", serif;
         }
 
         .timeline__header h5 {
-            color: #cf1767 !important;
+            color: #ffffff !important;
             font-family: "Roboto", sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.15rem;
-            font-size: 1.4rem;
-            margin-bottom: 1.6rem;
+            letter-spacing: 0.2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
 
         .timeline__timeframe {
             color: rgba(255, 255, 255, 0.4) !important;
-            font-size: 1.4rem;
-            margin-bottom: 0.4rem !important;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem !important;
+            font-weight: 500;
         }
 
-        .timeline__desc p {
-            color: rgba(255, 255, 255, 0.6) !important;
-            font-size: 1.7rem;
-            line-height: 1.8;
+        .btn-container {
+            margin-top: 10rem;
+            text-align: center;
+        }
+
+        .btn--primary {
+            background: linear-gradient(135deg, #cf1767 0%, #ff3b8e 100%);
+            border: none;
+            box-shadow: 0 10px 30px rgba(207, 23, 103, 0.3);
+            border-radius: 5px;
+            padding: 2rem 4rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(207, 23, 103, 0.5);
         }
 
         /* Header backdrop */
         .s-header {
-            background-color: rgba(5, 5, 5, 0.85) !important;
+            background-color: rgba(5, 5, 5, 0.9) !important;
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            transition: all 0.3s ease;
         }
 
-        .btn-container {
-            margin-top: 8rem;
-            text-align: center;
+        .timeline__desc {
+            color: white;
         }
 
         /* Responsive */
@@ -171,11 +202,12 @@
             }
 
             .timeline__block {
-                padding-left: 4.8rem;
+                padding: 3rem !important;
+                margin-left: 2rem;
             }
 
-            .timeline__icon-wrap {
-                left: 4.8rem;
+            .timeline__block:hover {
+                transform: none;
             }
         }
     </style>

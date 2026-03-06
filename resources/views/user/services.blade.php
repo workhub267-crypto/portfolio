@@ -11,14 +11,30 @@
         .s-services-page {
             padding-top: 20rem;
             padding-bottom: 12rem;
-            background: linear-gradient(to bottom, #050505 0%, #0c0c0c 100%);
+            background: radial-gradient(circle at 50% 100%, #1a1a1a 0%, #050505 100%);
             color: rgba(255, 255, 255, 0.6);
             position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient Background Glow */
+        .s-services-page::before {
+            content: "";
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(207, 23, 103, 0.03) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .services-hero {
-            margin-bottom: 10rem;
+            margin-bottom: 8rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .services-hero h1 {
@@ -29,14 +45,15 @@
             margin-top: 0;
             margin-bottom: 2.4rem;
             letter-spacing: -0.02em;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .services-hero .subheading {
             font-family: "Roboto", sans-serif;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: .4rem;
+            letter-spacing: .5rem;
             color: #cf1767;
             margin-bottom: 2rem;
             display: block;
@@ -44,64 +61,81 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 4rem;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 4rem;
-            border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 5rem 4rem;
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(207, 23, 103, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(207, 23, 103, 0.4);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 30px rgba(207, 23, 103, 0.1);
         }
 
-        .service-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background-color: #cf1767;
+        .service-icon {
+            font-size: 4.8rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            display: inline-block;
             transition: all 0.4s ease;
         }
 
-        .service-card:hover::before {
-            height: 100%;
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+            filter: drop-shadow(0 0 10px rgba(207, 23, 103, 0.5));
         }
 
         .service-card h3 {
             color: #ffffff;
             font-family: "Frank Ruhl Libre", serif;
-            font-size: 2.8rem;
-            margin-bottom: 2rem;
+            font-size: 3rem;
+            margin-bottom: 2.4rem;
+            letter-spacing: -0.01em;
         }
 
         .service-card p {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0;
+            flex-grow: 1;
         }
 
-        .s-header {
-            background-color: rgba(5, 5, 5, 0.85) !important;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        .service-card .service-num {
+            position: absolute;
+            top: 3rem;
+            right: 4rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.03);
+            line-height: 1;
+            transition: color 0.4s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover .service-num {
+            color: rgba(207, 23, 103, 0.08);
         }
 
         @media screen and (max-width: 800px) {
@@ -111,6 +145,11 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .service-card {
+                padding: 4rem 3rem;
             }
         }
     </style>
@@ -150,6 +189,10 @@
                         response.data.forEach(function (service, index) {
                             html += `
                                 <div class="service-card" data-aos="fade-up" data-aos-delay="${index * 100}">
+                                    <span class="service-num">${service.service_number || (index + 1).toString().padStart(2, '0')}</span>
+                                    <div class="service-icon">
+                                        <i class="${service.icon || 'ri-service-line'}"></i>
+                                    </div>
                                     <h3>${service.title}</h3>
                                     <p>${service.description}</p>
                                 </div>

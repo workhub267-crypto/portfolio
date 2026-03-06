@@ -337,11 +337,11 @@
 
         </div> <!-- end masonry-wrap -->
 
-        <div class="row" data-aos="fade-up" style="text-align: center; margin-top: 6rem;">
+        {{-- <div class="row" data-aos="fade-up" style="text-align: center; margin-top: 6rem;">
             <div class="column large-full">
                 <a href="{{ route('user.works') }}" class="btn btn--stroke">View All Works</a>
             </div>
-        </div>
+        </div> --}}
 
     </section> <!-- end s-work -->
 
@@ -489,6 +489,10 @@
                         $('#about-subtitle').html(response.data.subtitle);
                         $("#about-left").html(leftHtml);
                         $("#about-right").html(rightHtml);
+                        $("#about-image").css(
+                "background-image",
+    "url(/storage/" + response.data.profile_image + ")"
+);
                     }
 
                 }

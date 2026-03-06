@@ -9,14 +9,14 @@
 
     <nav class="header-nav-wrap">
         <ul class="header-main-nav">
-            <li class="{{ request()->is('/') ? 'current' : '' }}"><a
-                    class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#intro"
-                    title="intro">Intro</a></li>
+            <li class="{{ request()->is('/') ? 'current' : '' }}"><a href="" title="home">Home</a></li>
             <li class="{{ request()->is('about') ? 'current' : '' }}"><a href="{{ route('user.about') }}"
                     title="about">About</a></li>
             <li class="{{ request()->is('services') ? 'current' : '' }}"><a href="{{ route('user.services') }}"
                     title="services">Services</a></li>
-            <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#works"
+            <li class="{{ request()->is('skills') ? 'current' : '' }}"><a href="{{ route('user.skills') }}"
+                    title="skills">Skills</a></li>
+            <li class="{{ request()->is('works') ? 'current' : '' }}"><a href="{{ route('user.projects') }}"
                     title="works">Works</a></li>
             <li class="{{ request()->is('contact') ? 'current' : '' }}"><a href="{{ route('user.contact') }}"
                     title="contact us">Contact</a></li>

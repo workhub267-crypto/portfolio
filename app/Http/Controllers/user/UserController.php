@@ -52,9 +52,14 @@ class UserController extends Controller
         return view('user.services');
     }
 
-    public function worksPage()
+    public function skillsPage()
     {
-        return view('user.works');
+        return view('user.skills');
+    }
+
+    public function projectsPage()
+    {
+        return view('user.projects');
     }
 
     public function sendContactData(Request $request)
@@ -104,5 +109,24 @@ class UserController extends Controller
             return $this->sendError("Projects not found", 404);
         }
         return $this->sendResponse('Projects Fetched Successfully', $projects, 200);
+    }
+
+    public function getSkills()
+    {
+        $skills = \App\Models\Skill::all();
+
+        // If no skills in DB, return static demo data as requested
+        if ($skills->isEmpty()) {
+            $skills = [
+                ['skill_name' => 'PHP / Laravel', 'proficiency' => 90, 'category' => 'Backend'],
+                ['skill_name' => 'JavaScript / Vue.js', 'proficiency' => 85, 'category' => 'Frontend'],
+                ['skill_name' => 'HTML5 / CSS3', 'proficiency' => 95, 'category' => 'Frontend'],
+                ['skill_name' => 'MySQL / PostgreSQL', 'proficiency' => 80, 'category' => 'Database'],
+                ['skill_name' => 'Git / GitHub', 'proficiency' => 88, 'category' => 'DevOps'],
+                ['skill_name' => 'Responsive Design', 'proficiency' => 92, 'category' => 'Design'],
+            ];
+        }
+
+        return $this->sendResponse('Skills Fetched Successfully', $skills, 200);
     }
 }

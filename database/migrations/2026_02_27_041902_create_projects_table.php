@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('github_link')->nullable();
             $table->string('live_link')->nullable();
             $table->string('image')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'completed', 'ongoing'])->default('active');
             $table->timestamps();
             $table->softDeletes();
         });

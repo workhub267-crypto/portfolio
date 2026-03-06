@@ -3,8 +3,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up(): void
     {
         Schema::create('testimonials', function (Blueprint $table) {
@@ -13,8 +12,9 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->text('message');
             $table->string('client_image')->nullable();
+            $table->integer('sort_order')->default(0);
             $table->timestamps();
-            $table->softDeletes(); 
+            $table->softDeletes();
         });
     }
 

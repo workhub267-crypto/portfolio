@@ -63,9 +63,24 @@
                         </ul>
                     </div>
                 </li> <!-- end Dashboard Menu -->
-<li class="nav-item">
+                <li class="nav-item">
                     <a href="{{ route('admin.about') }}" class="nav-link menu-link">
                         <i class="bx bx-user-circle"></i> <span data-key="t-user">About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.services') }}" class="nav-link menu-link">
+                        <i class="ri-service-line"></i> <span data-key="t-user">Services</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.contacts') }}" class="nav-link menu-link">
+                        <i class="ri-mail-line"></i> <span data-key="t-user">Contact Messages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.projects') }}" class="nav-link menu-link">
+                        <i class="ri-folders-line"></i> <span data-key="t-user">Projects</span>
                     </a>
                 </li>
             </ul>
