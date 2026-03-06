@@ -4,7 +4,7 @@
         <a class="site-logo" href="{{ url('/') }}">
             <img src="{{asset('assets/user/images/logo.svg')}}" alt="Homepage">
         </a>
-</a>
+        </a>
     </div>
 
     <nav class="header-nav-wrap">
@@ -12,9 +12,9 @@
             <li class="{{ request()->is('/') ? 'current' : '' }}"><a
                     class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#intro"
                     title="intro">Intro</a></li>
-            <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#about"
+            <li class="{{ request()->is('about') ? 'current' : '' }}"><a href="{{ route('user.about') }}"
                     title="about">About</a></li>
-            <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#services"
+            <li class="{{ request()->is('services') ? 'current' : '' }}"><a href="{{ route('user.services') }}"
                     title="services">Services</a></li>
             <li><a class="{{ request()->is('/') ? 'smoothscroll' : '' }}" href="{{ url('/') }}#works"
                     title="works">Works</a></li>
