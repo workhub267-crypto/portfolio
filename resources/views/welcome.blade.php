@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 
     <!--- basic page needs
@@ -87,10 +88,13 @@
             </div>
 
             <div class="row about-me__buttons">
-                <div class="column large-half tab-full" data-aos="fade-up">
+                <div class="column large-4 tab-full" data-aos="fade-up">
                     <a href="{{route('user.contact')}}" class="btn btn--stroke full-width">Hire Me</a>
                 </div>
-                <div class="column large-half tab-full" data-aos="fade-up">
+                <div class="column large-4 tab-full" data-aos="fade-up">
+                    <a href="{{route('user.about')}}" class="btn btn--stroke full-width">Learn More</a>
+                </div>
+                <div class="column large-4 tab-full" data-aos="fade-up">
                     <a href="javascript:void(0);" id="downloadResumeBtn" class="btn btn--primary full-width">
                         Download CV
                     </a>
@@ -124,7 +128,10 @@
                                 <h5>Lead Designer</h5>
                             </div>
                             <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
+                                    cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
+                                    cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
+                                    occaecat nisi.</p>
                             </div>
                         </div>
 
@@ -136,7 +143,10 @@
                                 <h5>Frontend Developer</h5>
                             </div>
                             <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
+                                    cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
+                                    cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
+                                    occaecat nisi.</p>
                             </div>
                         </div>
 
@@ -148,9 +158,12 @@
                                 <h5>Frontend Developer</h5>
                             </div>
                             <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
+                                    cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
+                                    cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
+                                    occaecat nisi.</p>
+                            </div>
                         </div>
-                    </div>
 
                     </div>
                 </div>
@@ -170,7 +183,10 @@
                                 <h5>Master Degree</h5>
                             </div>
                             <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
+                                    cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
+                                    cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
+                                    occaecat nisi.</p>
                             </div>
                         </div>
 
@@ -182,7 +198,10 @@
                                 <h5>Bachelor Degree</h5>
                             </div>
                             <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
+                                    cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
+                                    cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
+                                    occaecat nisi.</p>
                             </div>
                         </div>
 
@@ -194,9 +213,12 @@
                                 <h5>Bachelor Degree</h5>
                             </div>
                             <div class="timeline__desc">
-                            <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                                <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi
+                                    cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident
+                                    cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est
+                                    occaecat nisi.</p>
+                            </div>
                         </div>
-                    </div>
 
                     </div>
                 </div>
@@ -223,8 +245,14 @@
             </div>
         </div> <!-- end heading-block -->
 
-        <div class="row services-list block-large-1-3 block-medium-1-2 block-tab-full"  id="services-container">
+        <div class="row services-list block-large-1-3 block-medium-1-2 block-tab-full" id="services-container">
         </div> <!-- end services-list -->
+
+        <div class="row" data-aos="fade-up" style="text-align: center; margin-top: 6rem;">
+            <div class="column large-full">
+                <a href="{{ route('user.services') }}" class="btn btn--stroke">View All Services</a>
+            </div>
+        </div>
 
     </section> <!-- end s-services -->
 
@@ -298,7 +326,8 @@
                         </div>
 
                         <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde
+                                dolorem corrupti neque nisi.</p>
                         </div>
                     </div>
                 </div> <!-- end masonry__brick -->
@@ -308,12 +337,18 @@
 
         </div> <!-- end masonry-wrap -->
 
+        <div class="row" data-aos="fade-up" style="text-align: center; margin-top: 6rem;">
+            <div class="column large-full">
+                <a href="{{ route('user.works') }}" class="btn btn--stroke">View All Works</a>
+            </div>
+        </div>
+
     </section> <!-- end s-work -->
 
 
     <!-- testimonies
 ================================================== -->
-    <section class="s-testimonials">
+    {{-- <section class="s-testimonials">
 
         <div class="row testimonials" data-aos="fade-up">
 
@@ -322,7 +357,7 @@
 
         </div> <!-- end testimonials -->
 
-    </section> <!-- end s-testimonials -->
+    </section> <!-- end s-testimonials --> --}}
 
 
     <!-- contact
@@ -389,9 +424,11 @@
 
             <div class="pswp__ui pswp__ui--hidden">
                 <div class="pswp__top-bar">
-                <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close"
+                        title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"
+                        title="Share"></button> <button class="pswp__button pswp__button--fs"
+                        title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"
+                        title="Zoom in/out"></button>
                     <div class="pswp__preloader">
                         <div class="pswp__preloader__icn">
                             <div class="pswp__preloader__cut">
@@ -402,8 +439,8 @@
                 </div>
                 <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                     <div class="pswp__share-tooltip"></div>
-            </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
                 <div class="pswp__caption">
                     <div class="pswp__caption__center"></div>
                 </div>
@@ -464,8 +501,8 @@
                     url: "/download-resume",
                     type: "GET",
                     xhrFields: {
-                        responseType: 'blob'  
-                    },   
+                        responseType: 'blob'
+                    },
 
                     success: function (data, status, xhr) {
 
@@ -555,4 +592,5 @@
         });
     </script>
 </body>
+
 </html>

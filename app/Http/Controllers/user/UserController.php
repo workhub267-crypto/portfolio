@@ -10,10 +10,12 @@ use App\Http\Traits\ResponseTrait;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Testimonial;
 use App\Models\Service;
+use App\Models\Project;
 
 class UserController extends Controller
 {
     use ResponseTrait;
+
     public function getAboutData()
     {
         $about = About::first();
@@ -38,6 +40,21 @@ class UserController extends Controller
     public function contactPage()
     {
         return view('user.contact');
+    }
+
+    public function aboutPage()
+    {
+        return view('user.about');
+    }
+
+    public function servicesPage()
+    {
+        return view('user.services');
+    }
+
+    public function worksPage()
+    {
+        return view('user.works');
     }
 
     public function sendContactData(Request $request)
@@ -65,18 +82,27 @@ class UserController extends Controller
     public function getTestimonials()
     {
         $testimonials = Testimonial::all();
-        if(!$testimonials){
-            return $this->sendError("Testimonials not found",404);
+        if (!$testimonials) {
+            return $this->sendError("Testimonials not found", 404);
         }
         return $this->sendResponse('Testimonials Fetched Successfully', $testimonials, 200);
     }
-     public function getServices()
+
+    public function getServices()
     {
         $services = Service::all();
-        if(!$services){
-            return $this->sendError("Testimonials not found",404);
+        if (!$services) {
+            return $this->sendError("Services not found", 404);
         }
-        return $this->sendResponse('Testimonials Fetched Successfully', $services, 200);
+        return $this->sendResponse('Services Fetched Successfully', $services, 200);
     }
 
+    public function getProjects()
+    {
+        $projects = Project::all();
+        if (!$projects) {
+            return $this->sendError("Projects not found", 404);
+        }
+        return $this->sendResponse('Projects Fetched Successfully', $projects, 200);
+    }
 }
